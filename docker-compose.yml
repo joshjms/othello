@@ -16,4 +16,10 @@ services:
     ports:
       - "8000:8000"
 
-  
+  proxy:
+    build: proxy
+    ports:
+      - 80:80
+    depends_on: 
+      - client
+      - server
