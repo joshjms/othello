@@ -46,6 +46,6 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(8000, '0.0.0.0', () => {
+http.listen(8000, () => {
     console.log('listening on http://localhost:8000');
 });
