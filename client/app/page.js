@@ -10,6 +10,7 @@ export default function Home() {
 
     useEffect(() => {
         socket.on("connect", () => {
+	    console.log("Connected");
             setIsConnected(true);
         });
 

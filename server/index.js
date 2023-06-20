@@ -9,6 +9,7 @@ const OthelloBoard = require('./OthelloBoard.js');
 const board = new OthelloBoard();
 
 io.on('connection', (socket) => {
+    console.log('Connected');
     socket.emit('board', {
         board: board.board,
         turn: board.turn,
@@ -34,6 +35,7 @@ io.on('connection', (socket) => {
     socket.on('move', ({ row, col, turn }) => {
         if (board.turn === turn) {
             if (board.makeMove(row, col, turn)) {
+		console.log(`${turn} makes a move`};
                 board.recount();
                 io.emit('board', {
                     board: board.board,
