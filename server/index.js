@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
     socket.on('move', ({ row, col, turn }) => {
         if (board.turn === turn) {
             if (board.makeMove(row, col, turn)) {
-		console.log(`${turn} makes a move`};
+		console.log(`${turn} makes a move`);
                 board.recount();
                 io.emit('board', {
                     board: board.board,

@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client'
-export const socket = io('https://othello.joshjms.com', {
-     path: '/socket.io',
+export const socket = io(SOCKET_URL, {
+     path: SOCKET_PATH,
 })
 
 socket.on('connect_error', err => console.log(err));
